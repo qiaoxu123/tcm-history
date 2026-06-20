@@ -48,7 +48,8 @@ docs/
 
 - 内容 `docs/` → CC BY-SA 4.0（`LICENSE`）；代码/配置 → MIT（`LICENSE-CODE`）。
 - GitHub 私有仓库：`qiaoxu123/tcm-history`（`gh` 已登录 qiaoxu123）。
-- CI：推送 `main` 自动构建网页+PDF 并部署 GitHub Pages（`.github/workflows/deploy.yml`）。Pages 站点 URL：https://qiaoxu123.github.io/tcm-history/ （需在仓库 Settings→Pages 选 GitHub Actions 源；私有仓库的 Pages 需相应套餐支持）。
+- CI（`.github/workflows/deploy.yml`）：推送/PR 到 `main` 自动构建网页+PDF，并上传为可下载 artifact（`site-html`、`tcm-history-pdf`）。
+- **GitHub Pages 现状**：私有仓库 + 免费套餐**不支持** Pages（`gh api .../pages` 返回 422）。如需在线网页，三选一：①仓库转 public；②升级 GitHub Pro；③用别处托管。届时取消 workflow 末尾 `deploy-pages` 注释、并在 Settings→Pages 选 GitHub Actions 源即可。Pages URL 将是 https://qiaoxu123.github.io/tcm-history/ 。
 
 ## 当前状态（v0.1.0, 2026-06-20）
 
