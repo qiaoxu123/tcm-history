@@ -1,0 +1,115 @@
+site_name: 中医发展历史
+site_description: 一部开源、可持续修订的中医学发展通史，提供网页与 PDF 两种阅读形态。
+site_author: 乔旭
+site_url: https://qiaoxu123.github.io/tcm-history/
+repo_url: https://github.com/qiaoxu123/tcm-history
+repo_name: qiaoxu123/tcm-history
+copyright: >
+  内容采用 CC BY-SA 4.0 许可 · 代码与配置采用 MIT 许可
+
+docs_dir: docs
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: brown
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: 切换到暗色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: brown
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到亮色模式
+  font:
+    text: Noto Sans SC
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tooltips
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.keys
+  - pymdownx.emoji
+  - tables
+  - footnotes
+  - attr_list
+  - md_in_html
+
+plugins:
+  - search:
+      lang:
+        - zh
+  # PDF 导出默认关闭，通过环境变量 ENABLE_PDF=1 开启，避免日常预览变慢。
+  # 导出整书 PDF：ENABLE_PDF=1 mkdocs build  → 产物在 site/pdf/中医发展历史.pdf
+  - with-pdf:
+      enabled_if_env: ENABLE_PDF
+      output_path: pdf/中医发展历史.pdf
+      cover_title: 中医发展历史
+      cover_subtitle: 一部开源中医学通史
+      author: 乔旭
+      copyright: CC BY-SA 4.0
+      toc_title: 目录
+      heading_shift: false
+      ordered_chapter_level: 2
+      two_columns_level: 0
+
+nav:
+  - 首页: index.md
+  - 导论: chapters/00-introduction.md
+  - 编年史:
+      - 一、起源与萌芽 · 先秦: chapters/01-origins-prehistory.md
+      - 二、理论奠基 · 秦汉: chapters/02-foundations-qin-han.md
+      - 三、充实发展 · 魏晋南北朝: chapters/03-development-wei-jin.md
+      - 四、集成鼎盛 · 隋唐: chapters/04-golden-sui-tang.md
+      - 五、学派争鸣 · 宋金元: chapters/05-schools-song-jin-yuan.md
+      - 六、总结普及 · 明清: chapters/06-synthesis-ming-qing.md
+      - 七、碰撞与变革 · 近代: chapters/07-modern-transition.md
+      - 八、新生与现代化 · 当代: chapters/08-contemporary.md
+  - 专题:
+      - 本草学发展史: topics/materia-medica.md
+      - 针灸学发展史: topics/acupuncture.md
+      - 方剂学发展史: topics/formulas.md
+      - 典籍流变: topics/classics.md
+      - 中外医学交流史: topics/exchange.md
+  - 附录:
+      - 历代医家年表: appendix/timeline.md
+      - 重要典籍一览: appendix/key-texts.md
+      - 术语表: appendix/glossary.md
+      - 参考文献: appendix/references.md
+  - 关于:
+      - 参与贡献: about/contributing.md
+      - 更新日志: about/changelog.md

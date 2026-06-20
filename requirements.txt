@@ -1,0 +1,6 @@
+# 《中医发展历史》文档站构建依赖
+# 安装：python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+mkdocs-material>=9.5
+mkdocs-with-pdf>=0.9.3
+# mkdocs-with-pdf 依赖 weasyprint 进行 HTML→PDF 渲染
+weasyprint>=60

@@ -1,0 +1,18 @@
+# MkDocs build output
+site/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.python-version
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# PDF 本地产物（由 CI / 发布流程生成）
+*.local.pdf
