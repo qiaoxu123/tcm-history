@@ -54,7 +54,23 @@ docs/
 ## 当前状态（v0.1.0, 2026-06-20）
 
 - ✅ 八章编年史初稿、专题/附录骨架、文档站配置、CI、双许可、README/CHANGELOG 全部就位。
-- ⏳ 待办：史实/年代/引文逐条核对并补脚注出处；参考文献核实版本页码；专题与附录按各页「待办」清单扩充；补充少数民族医学内容。
+- ✅ 仓库已转 **public**，**GitHub Pages 已上线**：https://qiaoxu123.github.io/tcm-history/ （推送 main 自动重新部署；仓库 About→Website 已指向该址）。
+- ⏳ 待办（按优先级）：
+    1. 给正文关键史实/年代/引文**补脚注出处**（参考文献现为占位条目，需核实版本页码）。
+    2. 专题卷与附录按各页「待办」清单**扩充**。
+    3. 补充少数民族医学（藏/蒙/维医）内容。
+    4. 可视化时间轴（年表页）。
+
+## 下次开发快速上手
+
+```bash
+cd ~/Workspace/GitProjects/tcm-history
+source .venv/bin/activate          # 已建好的 venv，含 mkdocs-material + with-pdf + weasyprint
+mkdocs serve                       # 本地预览 http://127.0.0.1:8000
+# 装新依赖走清华镜像+关代理（本机 pip 直连 PyPI 会 CA 报错）：
+#   env -u http_proxy -u https_proxy -u all_proxy pip install -i https://pypi.tuna.tsinghua.edu.cn/simple <pkg>
+git add -A && git commit -m "..." && git push   # 推送即自动部署 Pages
+```
 
 ## 与既有目录的关系
 
